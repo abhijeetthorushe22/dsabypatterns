@@ -7,7 +7,7 @@ class Solution:
         n = len(nums)-1
 
         while high <= n:
-            total+=nums[high]
+            total=total+nums[high]
 
             while total >= target:
                 length = high-low+1
