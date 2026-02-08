@@ -7,12 +7,14 @@ class Solution:
             n = n //10
         return total
     def isHappy(self, n: int) -> bool:
-        seen = set()
-        while n!=1:
 
-            n = self.cal(n)
-            if n in seen:
-                return False
-            seen.add(n)
-        return True
+        slow = n
+        fast = self.cal(n)
+        while slow!=fast:
+            if fast == 1:
+                return True
+            slow = self.cal(slow)
+            fast = self.cal(fast)
+            fast = self.cal(fast)
+        return slow == 1
         
