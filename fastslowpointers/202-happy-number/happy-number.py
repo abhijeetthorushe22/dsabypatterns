@@ -7,6 +7,8 @@ class Solution:
             n = n //10
         return total
     def isHappy(self, n: int) -> bool:
+        if n == 1:
+            return True
 
         slow = n
         fast = self.cal(n)
@@ -16,5 +18,5 @@ class Solution:
             slow = self.cal(slow)
             fast = self.cal(fast)
             fast = self.cal(fast)
-        return slow == 1
+        return False
         
